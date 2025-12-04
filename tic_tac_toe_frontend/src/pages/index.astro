@@ -1,11 +1,10 @@
 ---
-import Welcome from '../components/Welcome.astro';
 import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import TicTacToe from '../components/TicTacToe.tsx';
 ---
 
 <Layout>
-	<Welcome />
+  <section style="display:grid;place-items:center;min-height:100dvh;padding:16px;background: linear-gradient(135deg, rgba(37, 99, 235, 0.08), rgba(243, 244, 246, 0.9));">
+    <TicTacToe client:load />
+  </section>
 </Layout>

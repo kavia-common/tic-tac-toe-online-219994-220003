@@ -10,7 +10,9 @@
     "lint": "npx eslint"
   },
   "dependencies": {
-    "astro": "5.4.2"
+    "astro": "5.4.2",
+    "@astrojs/preact": "4.0.3",
+    "preact": "10.24.3"
   },
   "devDependencies": {
     "@eslint/js": "9.24.0",

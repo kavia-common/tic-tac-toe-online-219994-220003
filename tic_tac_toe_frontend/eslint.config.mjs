@@ -1,4 +1,4 @@
-// eslint.config.mjs
+/* eslint.config.mjs */
 import js from '@eslint/js';
 import globals from 'globals';
 import tseslint from 'typescript-eslint';
@@ -9,6 +9,7 @@ export default [
   // TypeScript support
   ...tseslint.configs.recommended,
 
+  // TS and TSX files
   {
     files: ['**/*.ts', '**/*.tsx'],
     languageOptions: {
@@ -20,13 +21,22 @@ export default [
       },
     },
     rules: {
-      // Example custom rules for TS
       '@typescript-eslint/no-unused-vars': ['warn'],
       '@typescript-eslint/explicit-function-return-type': 'off',
     },
   },
 
-  // JS files config (same as before)
+  // Declarations: relax strict rules for generated or ambient types
+  {
+    files: ['**/*.d.ts'],
+    rules: {
+      '@typescript-eslint/triple-slash-reference': 'off',
+      '@typescript-eslint/no-explicit-any': 'off',
+      '@typescript-eslint/no-empty-object-type': 'off',
+    },
+  },
+
+  // JS files config
   {
     files: ['**/*.js', '**/*.jsx'],
     languageOptions: {
